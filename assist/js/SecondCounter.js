@@ -3,6 +3,7 @@ function countSecond() {
     setTimeout( function () {
         sjf();
         rr();
+        srt();
         SECOND_FROM_START++ ;
         $('.JsSecondCounter').html(SECOND_FROM_START+"\"");
         $('.JsQuantum').html(quantum);
