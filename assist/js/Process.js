@@ -1,4 +1,5 @@
 var ListProcess = [] ;
+var quantum = 0 ;
 var ProcessId = 0 ;
 
 function insertProcess() {
@@ -7,12 +8,17 @@ function insertProcess() {
     var JsNewProcessAlert = $('.JsNewProcessAlert') ;
     var thisProcess = [] ;
     thisProcess['name'] = JsProcessName.val();
-    thisProcess['burst'] = JsProcessBurstTime.val();
+    thisProcess['burst'] = parseInt(JsProcessBurstTime.val());
     thisProcess['arrival'] = SECOND_FROM_START;
+    thisProcess['real'] = parseInt(thisProcess['burst']);
+    thisProcess['realRR'] = parseInt(thisProcess['burst']);
     thisProcess['finish'] = 0;
+    thisProcess['finishRR'] = 0;
+    thisProcess['completion'] = -1;
+    thisProcess['completionRR'] = -1;
     thisProcess['id'] = ProcessId;
     JsNewProcessAlert.addClass('hidden');
-    if ( thisProcess['name'] !== '' && thisProcess['burst'] > 0 ) {
+    if ( thisProcess['name'] !== '' && parseInt(thisProcess['burst']) > 0 ) {
         ListProcess.push(thisProcess);
         ProcessId++;
         JsProcessName.val('');
@@ -22,3 +28,11 @@ function insertProcess() {
         JsNewProcessAlert.removeClass('hidden');
     }
 }
+
+function getQuantum() {
+    do {
+        var person = prompt("Please enter the quantum", "3");
+    } while ( ! parseInt(person) > 0 ) ;
+    quantum = person ;
+}
+getQuantum();
