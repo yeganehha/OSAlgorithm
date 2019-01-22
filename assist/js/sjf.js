@@ -15,14 +15,16 @@ function sjf() {
             } while (ListProcess[tempI].finish === 1);
 
             var tempTime = [];
-            tempTime["start"] = SECOND_FROM_START;
-            tempTime["finish"] = SECOND_FROM_START + parseInt(ListProcess[tempI]['burst']);
+            tempTime["start"] = SECOND_FROM_START  ;
+            tempTime["finish"] = SECOND_FROM_START + parseInt(ListProcess[tempI]['burst'])  ;
 
             if (!Array.isArray(ListProcess[tempI].processed)) {
                 ListProcess[tempI].processed = [];
                 ListProcess[tempI].processed['sjf'] = [];
             }
-
+            if (!Array.isArray(ListProcess[tempI].processed.sjf)) {
+                ListProcess[tempI].processed['sjf'] = [];
+            }
             ListProcess[tempI].processed.sjf.push(tempTime);
 
             var sjfBlock = $('.sjfBlock');
@@ -33,13 +35,14 @@ function sjf() {
             var pos = ListProcess.map(function (e) {
                 return e.id;
             }).indexOf(currentSJF);
-            if (ListProcess[pos].processed.sjf[0].finish == SECOND_FROM_START) {
+            if (ListProcess[pos].processed.sjf[0].finish === SECOND_FROM_START) {
                 flagSJFIsRun = false;
                 currentSJF = null;
                 ListProcess[pos].finish = 1 ;
                 ListProcess[pos].real = 0 ;
                 ListProcess[pos].completion = SECOND_FROM_START ;
                 $('.JsProcessIdExitTime_' + ListProcess[pos]['id']).html(SECOND_FROM_START + "\"");
+                sjf();
             }
         }
     }
