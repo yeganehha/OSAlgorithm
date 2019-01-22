@@ -10,12 +10,15 @@ function insertProcess() {
     thisProcess['name'] = JsProcessName.val();
     thisProcess['burst'] = parseInt(JsProcessBurstTime.val());
     thisProcess['arrival'] = SECOND_FROM_START;
-    thisProcess['real'] = parseInt(thisProcess['burst']);
-    thisProcess['realRR'] = parseInt(thisProcess['burst']);
+    thisProcess['real'] = thisProcess['burst'];
+    thisProcess['realRR'] = thisProcess['burst'];
+    thisProcess['realSRT'] = thisProcess['burst'];
     thisProcess['finish'] = 0;
     thisProcess['finishRR'] = 0;
+    thisProcess['finishSRT'] = 0;
     thisProcess['completion'] = -1;
     thisProcess['completionRR'] = -1;
+    thisProcess['completionSRT'] = -1;
     thisProcess['id'] = ProcessId;
     JsNewProcessAlert.addClass('hidden');
     if ( thisProcess['name'] !== '' && parseInt(thisProcess['burst']) > 0 ) {
