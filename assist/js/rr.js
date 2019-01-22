@@ -38,7 +38,7 @@ function rr() {
             var current = ListProcess[tempI].processed.rr.length  -1  ;
 
             var rrBlock = $('.rrBlock');
-            rrBlock.append('<li class="time_line_item JsProcessId_' + ListProcess[tempI].id + '"><div class="time_line_item_description"><div class="title">' + ListProcess[tempI].name + '</div></div><span class="number"><span>' + tempTime["start"] + '"</span> <span class="JsProcessIdExitTime_' + ListProcess[tempI].id + '_RR'+current+'">in process...</span></span></li>')
+            rrBlock.append('<li class="time_line_item JsProcessId_' + ListProcess[tempI].id + '"  onclick="show(' + ListProcess[tempI].id + ');"><div class="time_line_item_description"><div class="title">' + ListProcess[tempI].name + '</div></div><span class="number"><span>' + tempTime["start"] + '"</span> <span class="JsProcessIdExitTime_' + ListProcess[tempI].id + '_RR'+current+'">in process...</span></span></li>')
             flagRRIsRun = true;
             currentRR = tempI;
         } else {

@@ -39,7 +39,7 @@ function srt() {
             var current = ListProcess[tempI].processed.srt.length  -1  ;
 
             var srtBlock = $('.srtBlock');
-            srtBlock.append('<li class="time_line_item JsProcessId_' + ListProcess[tempI].id + '"><div class="time_line_item_description"><div class="title">' + ListProcess[tempI].name + '</div></div><span class="number"><span>' + tempTime["start"] + '"</span> <span class="JsProcessIdExitTime_' + ListProcess[tempI].id + '_SRT'+current+'">in process...</span></span></li>')
+            srtBlock.append('<li class="time_line_item JsProcessId_' + ListProcess[tempI].id + '" onclick="show(' + ListProcess[tempI].id + ');"><div class="time_line_item_description"><div class="title">' + ListProcess[tempI].name + '</div></div><span class="number"><span>' + tempTime["start"] + '"</span> <span class="JsProcessIdExitTime_' + ListProcess[tempI].id + '_SRT'+current+'">in process...</span></span></li>')
             flagSRTIsRun = true;
             currentSRT = ListProcess[tempI]['id'];
             currentSRTCount = ListProcess.length ;

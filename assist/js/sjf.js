@@ -28,7 +28,7 @@ function sjf() {
             ListProcess[tempI].processed.sjf.push(tempTime);
 
             var sjfBlock = $('.sjfBlock');
-            sjfBlock.append('<li class="time_line_item JsProcessId_' + ListProcess[tempI].id + '"><div class="time_line_item_description"><div class="title">' + ListProcess[tempI].name + '</div></div><span class="number"><span>' + tempTime["start"] + '"</span> <span class="JsProcessIdExitTime_' + ListProcess[tempI].id + '">in process...</span></span></li>')
+            sjfBlock.append('<li class="time_line_item JsProcessId_' + ListProcess[tempI].id + '"  onclick="show(' + ListProcess[tempI].id + ');"><div class="time_line_item_description"><div class="title">' + ListProcess[tempI].name + '</div></div><span class="number"><span>' + tempTime["start"] + '"</span> <span class="JsProcessIdExitTime_' + ListProcess[tempI].id + '">in process...</span></span></li>')
             flagSJFIsRun = true;
             currentSJF = ListProcess[tempI]['id'];
         } else {

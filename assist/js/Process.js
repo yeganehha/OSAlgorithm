@@ -1,6 +1,8 @@
 var ListProcess = [] ;
 var quantum = 0 ;
+var page = 0 ;
 var ProcessId = 0 ;
+var lastShowId = null ;
 
 function insertProcess() {
     var JsProcessName = $('#JsProcessName') ;
@@ -37,5 +39,13 @@ function getQuantum() {
         var person = prompt("Please enter the quantum", "3");
     } while ( ! parseInt(person) > 0 ) ;
     quantum = person ;
+    page = person ;
 }
 getQuantum();
+
+
+function show(id) {
+    $('.JsProcessId_'+lastShowId).removeClass('ACTIVE');
+    $('.JsProcessId_'+id).addClass('ACTIVE');
+    lastShowId = id ;
+}
