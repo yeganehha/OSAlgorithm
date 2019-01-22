@@ -37,6 +37,8 @@ function sjf() {
                 flagSJFIsRun = false;
                 currentSJF = null;
                 ListProcess[pos].finish = 1 ;
+                ListProcess[pos].real = 0 ;
+                ListProcess[pos].completion = SECOND_FROM_START ;
                 $('.JsProcessIdExitTime_' + ListProcess[pos]['id']).html(SECOND_FROM_START + "\"");
             }
         }
