@@ -4,6 +4,7 @@ function countSecond() {
         sjf();
         rr();
         srt();
+        lru();
         show(lastShowId);
         SECOND_FROM_START++ ;
         $('.JsSecondCounter').html(SECOND_FROM_START+"\"");
