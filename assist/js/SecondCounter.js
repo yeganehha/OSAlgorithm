@@ -5,6 +5,7 @@ function countSecond() {
         rr();
         srt();
         lru();
+        optimal();
         show(lastShowId);
         SECOND_FROM_START++ ;
         $('.JsSecondCounter').html(SECOND_FROM_START+"\"");
